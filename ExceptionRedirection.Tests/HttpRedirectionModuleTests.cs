@@ -24,7 +24,7 @@ namespace ExceptionRedirection.Tests
         Because of = () =>
             Subject.OnError(new object(), EventArgs.Empty);
 
-        It handles_the_exception = () =>
+        It passes_the_exception_to_the_exception_hanlder = () =>
             The<IExceptionHandler>().WasToldTo(x => x.HandleException(Param.IsAny<Exception>()));
     }
 }
