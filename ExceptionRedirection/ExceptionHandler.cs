@@ -22,7 +22,8 @@ namespace ExceptionRedirection
         {
             var route = _exceptionRouteProvider.GetRoute(exception);
 
-            _responseBase.RedirectToRoute(route);
+            if(route != null)
+                _responseBase.RedirectToRoute(route);
         }
     }
 }
