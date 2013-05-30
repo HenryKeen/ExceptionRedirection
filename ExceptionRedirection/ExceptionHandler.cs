@@ -9,21 +9,22 @@ namespace ExceptionRedirection
 {
     public class ExceptionHandler : IExceptionHandler
     {
-        readonly HttpResponse _responseBase;
         readonly IExceptionRouteProvider _exceptionRouteProvider;
 
-        public ExceptionHandler(HttpResponse responseBase, IExceptionRouteProvider exceptionRouteProvider)
+        public ExceptionHandler(IExceptionRouteProvider exceptionRouteProvider)
         {
-            _responseBase = responseBase;
             _exceptionRouteProvider = exceptionRouteProvider;
         }
 
-        public void HandleException(Exception exception)
+        public void HandleException(HttpResponse responseBase, Exception exception)
         {
             var route = _exceptionRouteProvider.GetRoute(exception);
 
-            if(route != null)
-                _responseBase.RedirectToRoute(route);
+            if (route != null)
+            {
+                responseBase.RedirectToRoute(route);
+                responseBase.End();
+            }
         }
     }
 }

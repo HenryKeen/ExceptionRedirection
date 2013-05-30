@@ -41,7 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExceptionHandler.cs" />
+    <Compile Include="ExceptionRouteCollection.cs" />
     <Compile Include="ExceptionRouteProvider.cs" />
+    <Compile Include="ExceptionRouteTable.cs" />
     <Compile Include="HttpRedirectionModule.cs" />
     <Compile Include="IExceptionHandler.cs" />
     <Compile Include="IExceptionRouteProvider.cs" />

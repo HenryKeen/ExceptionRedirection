@@ -14,14 +14,14 @@ namespace ExceptionRedirection
         {
             _context = context;
 
-            ExceptionHandler = new ExceptionHandler(_context.Response, new ExceptionRouteProvider());
+            ExceptionHandler = new ExceptionHandler(new ExceptionRouteProvider());
 
             context.Error += OnError;
         }
 
         public void OnError(object sender, System.EventArgs e)
         {
-            ExceptionHandler.HandleException(GetLastError());
+            ExceptionHandler.HandleException(_context.Response, GetLastError());
         }
 
         public virtual Exception GetLastError()

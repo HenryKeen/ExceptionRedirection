@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Web.Routing;
 
 namespace ExceptionRedirection
@@ -7,7 +8,12 @@ namespace ExceptionRedirection
     {
         public RouteValueDictionary GetRoute(Exception exception)
         {
-            throw new NotImplementedException();
+            Type typeOfException = exception.GetType();
+
+            if (ExceptionRouteTable.Routes.ContainsKey(typeOfException))
+                return ExceptionRouteTable.Routes[typeOfException];
+
+            return null;
         }
     }
 }

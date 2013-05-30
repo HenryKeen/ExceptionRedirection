@@ -22,6 +22,13 @@ namespace ExceptionRedirection.IntegrationTests
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            RegisterExceptionRedirects(ExceptionRouteTable.Routes);
+        }
+
+        void RegisterExceptionRedirects(ExceptionRouteCollection routes)
+        {
+            routes.MapRoute<InvalidOperationException>(new { controller = "Home", action = "Error" });
         }
     }
 }
