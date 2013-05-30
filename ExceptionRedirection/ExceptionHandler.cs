@@ -9,10 +9,10 @@ namespace ExceptionRedirection
 {
     public class ExceptionHandler : IExceptionHandler
     {
-        readonly HttpResponseBase _responseBase;
+        readonly HttpResponse _responseBase;
         readonly IExceptionRouteProvider _exceptionRouteProvider;
 
-        public ExceptionHandler(HttpResponseBase responseBase, IExceptionRouteProvider exceptionRouteProvider)
+        public ExceptionHandler(HttpResponse responseBase, IExceptionRouteProvider exceptionRouteProvider)
         {
             _responseBase = responseBase;
             _exceptionRouteProvider = exceptionRouteProvider;

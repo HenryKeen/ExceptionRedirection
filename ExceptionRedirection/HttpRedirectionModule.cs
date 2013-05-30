@@ -13,6 +13,9 @@ namespace ExceptionRedirection
         public void Init(HttpApplication context)
         {
             _context = context;
+
+            ExceptionHandler = new ExceptionHandler(_context.Response, new ExceptionRouteProvider());
+
             context.Error += OnError;
         }
 
