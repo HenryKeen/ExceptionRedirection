@@ -23,7 +23,7 @@ namespace ExceptionRedirection
             if (route != null)
             {
                 response.RedirectToRoute(route);
-                response.End();
+                response.TrySkipIisCustomErrors = true;
             }
         }
     }

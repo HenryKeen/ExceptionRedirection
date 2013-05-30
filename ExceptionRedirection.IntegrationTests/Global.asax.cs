@@ -28,6 +28,7 @@ namespace ExceptionRedirection.IntegrationTests
 
         void RegisterExceptionRedirects(ExceptionRouteCollection routes)
         {
+            routes.MapRoute<Exception>(new { controller = "Home", action = "Error" });
             routes.MapRoute<InvalidOperationException>(new { controller = "Home", action = "Error" });
         }
     }

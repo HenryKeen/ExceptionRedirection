@@ -13,6 +13,11 @@ namespace ExceptionRedirection.IntegrationTests.Controllers
             throw new InvalidOperationException();
         }
 
+        public ActionResult NonMappedException()
+        {
+            throw new AccessViolationException();
+        }
+
         public ActionResult Error()
         {
             return View();

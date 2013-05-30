@@ -8,12 +8,13 @@ namespace ExceptionRedirection
     {
         public void MapRoute<T>(RouteValueDictionary route)
         {
-            Add(typeof(T), route);
+            if(!ContainsKey(typeof(T)))
+                Add(typeof(T), route);
         }
 
         public void MapRoute<T>(object route)
         {
-            Add(typeof(T), new RouteValueDictionary(route));
+            MapRoute<T>(new RouteValueDictionary(route));
         }
     }
 }
