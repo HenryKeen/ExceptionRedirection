@@ -9,6 +9,6 @@ namespace ExceptionRedirection
 {
     public interface IExceptionHandler
     {
-        void HandleException(HttpResponse response, Exception exception);
+        void HandleException(HttpResponseBase response, Exception exception);
     }
 }

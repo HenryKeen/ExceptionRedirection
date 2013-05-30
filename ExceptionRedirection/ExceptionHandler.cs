@@ -16,14 +16,14 @@ namespace ExceptionRedirection
             _exceptionRouteProvider = exceptionRouteProvider;
         }
 
-        public void HandleException(HttpResponse responseBase, Exception exception)
+        public void HandleException(HttpResponseBase response, Exception exception)
         {
             var route = _exceptionRouteProvider.GetRoute(exception);
 
             if (route != null)
             {
-                responseBase.RedirectToRoute(route);
-                responseBase.End();
+                response.RedirectToRoute(route);
+                response.End();
             }
         }
     }
