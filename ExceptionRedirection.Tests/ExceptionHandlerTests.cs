@@ -30,8 +30,8 @@ namespace ExceptionRedirection.Tests
         It redirects_to_the_exception_route = () =>
             The<HttpResponseBase>().WasToldTo(x => x.RedirectToRoute(_route));
 
-        It skips_iis_errors = () =>
-            The<HttpResponseBase>().TrySkipIisCustomErrors.ShouldEqual(true);
+        It ends_the_response = () =>
+            The<HttpResponseBase>().WasToldTo(x => x.End());
     }
 
     internal class When_handling_an_exception_without_a_route : WithSubject<ExceptionHandler>
@@ -55,7 +55,7 @@ namespace ExceptionRedirection.Tests
         It does_not_redirect = () =>
             The<HttpResponseBase>().WasNotToldTo(x => x.RedirectToRoute(_route));
 
-        It does_not_skip_iis_errors = () =>
-            The<HttpResponseBase>().TrySkipIisCustomErrors.ShouldEqual(false);
+        It does_not_end_the_response = () =>
+            The<HttpResponseBase>().WasNotToldTo(x => x.End());
     }
 }
