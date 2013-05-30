@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExceptionHandler.cs" />
     <Compile Include="HttpRedirectionModule.cs" />
     <Compile Include="IExceptionHandler.cs" />
     <Compile Include="IExceptionRouteProvider.cs" />

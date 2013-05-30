@@ -5,6 +5,6 @@ namespace ExceptionRedirection
 {
     public interface IExceptionRouteProvider
     {
-        RouteValueDictionary GetRoute(InvalidOperationException exception);
+        RouteValueDictionary GetRoute(Exception exception);
     }
 }
