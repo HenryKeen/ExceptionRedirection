@@ -6,14 +6,24 @@ namespace ExceptionRedirection
 {
     public class HttpRedirectionModule : IHttpModule
     {
+        HttpApplication _context;
+
+        public IExceptionHandler ExceptionHandler { get; set; }
+
         public void Init(HttpApplication context)
         {
-            context.Error += Error;
+            _context = context;
+            context.Error += OnError;
         }
 
-        void Error(object sender, System.EventArgs e)
+        public void OnError(object sender, System.EventArgs e)
         {
-            throw new NotImplementedException();
+            ExceptionHandler.HandleException(GetLastError());
+        }
+
+        public virtual Exception GetLastError()
+        {
+            return _context.Server.GetLastError();
         }
 
         public void Dispose()

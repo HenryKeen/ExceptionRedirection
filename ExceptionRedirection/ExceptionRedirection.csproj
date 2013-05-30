@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HttpRedirectionModule.cs" />
+    <Compile Include="IExceptionHandler.cs" />
+    <Compile Include="IExceptionRouteProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
