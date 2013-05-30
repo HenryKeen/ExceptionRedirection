@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionRedirection", "Exc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionRedirection.Tests", "ExceptionRedirection.Tests\ExceptionRedirection.Tests.csproj", "{974CC404-BC86-4FFB-B5F1-61FA4E28D1BD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionRedirection.IntegrationTests", "ExceptionRedirection.IntegrationTests\ExceptionRedirection.IntegrationTests.csproj", "{644C8A68-0E9C-4228-9E28-F0951D1C19AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{974CC404-BC86-4FFB-B5F1-61FA4E28D1BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{974CC404-BC86-4FFB-B5F1-61FA4E28D1BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{974CC404-BC86-4FFB-B5F1-61FA4E28D1BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{644C8A68-0E9C-4228-9E28-F0951D1C19AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{644C8A68-0E9C-4228-9E28-F0951D1C19AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{644C8A68-0E9C-4228-9E28-F0951D1C19AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{644C8A68-0E9C-4228-9E28-F0951D1C19AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

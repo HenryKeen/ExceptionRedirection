@@ -1,17 +1,24 @@
+using System;
+using System.Diagnostics;
 using System.Web;
 
-namespace Exception
+namespace ExceptionRedirection
 {
     public class HttpRedirectionModule : IHttpModule
     {
         public void Init(HttpApplication context)
         {
-            throw new System.NotImplementedException();
+            context.Error += Error;
+        }
+
+        void Error(object sender, System.EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         public void Dispose()
         {
-            throw new System.NotImplementedException();
+            
         }
     }
 }
